@@ -20,6 +20,7 @@ kotlin {
     compilerOptions {
         freeCompilerArgs.add("-Xwhen-guards")
         freeCompilerArgs.add("-Xmulti-dollar-interpolation")
+        freeCompilerArgs.add("-Xnon-local-break-continue")
     }
     jvmToolchain(21)
 }
