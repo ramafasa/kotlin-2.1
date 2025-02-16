@@ -19,6 +19,7 @@ tasks.test {
 kotlin {
     compilerOptions {
         freeCompilerArgs.add("-Xwhen-guards")
+        freeCompilerArgs.add("-Xmulti-dollar-interpolation")
     }
     jvmToolchain(21)
 }

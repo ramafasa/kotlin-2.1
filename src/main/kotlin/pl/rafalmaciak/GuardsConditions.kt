@@ -28,7 +28,6 @@ fun processHttpRequestResult(response: HttpRequestResult): String =
                 else -> "Other error returned by server ${response.code}: ${response.errorMessage}"
             }
         }
-
         is HttpRequestResult.Timeout -> "Connection Timeout"
         is HttpRequestResult.ConnectionError -> "Connection error"
     }
