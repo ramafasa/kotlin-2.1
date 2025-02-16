@@ -15,14 +15,13 @@ enum class EventType {
     ORDER_CANCELLED,
     ORDER_COMPLETED,
     ORDER_PAID,
-    ORDER_SHIPPED,
     ORDER_DELIVERED,
 }
 
 val allowedEvents = setOf(
     EventType.ORDER_CREATED,
     EventType.ORDER_CANCELLED,
-    EventType.ORDER_DELIVERED,
+    EventType.ORDER_COMPLETED,
 )
 
 object NonLocalReturn { // this worked before 2.1.0
@@ -92,8 +91,9 @@ fun main() {
     val events = setOf(
         Event(UUID.randomUUID(), Instant.now(), EventType.ORDER_CREATED),
         Event(UUID.randomUUID(), Instant.now(), EventType.ORDER_CANCELLED),
-        Event(UUID.randomUUID(), Instant.now(), EventType.ORDER_COMPLETED),
         Event(UUID.randomUUID(), Instant.now(), EventType.ORDER_PAID),
+        Event(UUID.randomUUID(), Instant.now(), EventType.ORDER_COMPLETED),
+        Event(UUID.randomUUID(), Instant.now(), EventType.ORDER_DELIVERED),
     )
 
 //    NonLocalReturn.handleEvents(events)
