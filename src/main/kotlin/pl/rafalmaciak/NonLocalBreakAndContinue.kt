@@ -35,6 +35,7 @@ object NonLocalReturn { // this worked before 2.1.0
             }
 
             println("Event $event is valid")
+            // processing the event...
         }
     }
 
@@ -56,7 +57,10 @@ object NonLocalBreak {
             }
 
             println("Event $event is valid")
+            // processing the event...
         }
+
+        println("Processing finished. Summary:...")
     }
 
     private inline fun validateEvent(event: Event, onValidationError: (Event) -> Unit) {
@@ -77,7 +81,10 @@ object NonLocalContinue {
             }
 
             println("Event $event is valid")
+            // processing the event...
         }
+
+        println("Processing finished. Summary:...")
     }
 
     private inline fun validateEvent(event: Event, onValidationError: (Event) -> Unit) {
